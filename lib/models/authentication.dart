@@ -1,3 +1,4 @@
+import 'package:first_application/views/otp.dart';
 import 'package:first_application/views/volta.dart';
 import 'package:first_application/views/progress.dart';
 import 'package:first_application/views/homescreen.dart';
@@ -8,8 +9,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
-
-//GreenTabs represent the bottom navigation tabs. 
+//GreenTabs represent the bottom navigation tabs.
 class GreenTabs extends StatefulWidget {
   const GreenTabs({super.key});
 
@@ -40,23 +40,10 @@ class _GreenTabsState extends State<GreenTabs> {
         child: currentScreen,
         bucket: bucket,
       ),
-      floatingActionButton: SizedBox(
-        height: 60,
-        width: 60,
-        child: FloatingActionButton(
-          backgroundColor: Colors.green,
-          onPressed: () => pickImage(),
-          child: const Icon(
-            Icons.camera,
-            size: 40,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         elevation: 0,
-        shape: CircularNotchedRectangle(),
-        notchMargin: 10,
+        // shape: CircularNotchedRectangle(),
+        // notchMargin: 10,
         child: Container(
           height: 60,
           child: Row(
@@ -117,6 +104,26 @@ class _GreenTabsState extends State<GreenTabs> {
                   ),
                 ],
               ),
+              //to open the camera
+              MaterialButton(
+                    minWidth: 50,
+                    onPressed: () {
+                      pickImage();
+                      setState(() {
+                        currentTab = 2;
+                      });
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.camera,
+                          size: 50,
+                          color: currentTab == 2 ? Colors.green : Colors.grey,
+                        ),
+                      ],
+                    ),
+                  ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -125,7 +132,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     onPressed: () {
                       setState(() {
                         currentScreen = Maps();
-                        currentTab = 2;
+                        currentTab = 3;
                       });
                     },
                     child: Column(
@@ -133,12 +140,12 @@ class _GreenTabsState extends State<GreenTabs> {
                       children: [
                         Icon(
                           Icons.map,
-                          color: currentTab == 2 ? Colors.green : Colors.grey,
+                          color: currentTab == 3 ? Colors.green : Colors.grey,
                         ),
                         Text(
                           'Maps',
                           style: TextStyle(
-                            color: currentTab == 2 ? Colors.green : Colors.grey,
+                            color: currentTab == 3 ? Colors.green : Colors.grey,
                             fontSize: 10,
                           ),
                         )
@@ -150,7 +157,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     onPressed: () {
                       setState(() {
                         currentScreen = Progress();
-                        currentTab = 3;
+                        currentTab = 4;
                       });
                     },
                     child: Column(
@@ -158,12 +165,12 @@ class _GreenTabsState extends State<GreenTabs> {
                       children: [
                         Icon(
                           Icons.update,
-                          color: currentTab == 3 ? Colors.green : Colors.grey,
+                          color: currentTab == 4 ? Colors.green : Colors.grey,
                         ),
                         Text(
                           'Progress',
                           style: TextStyle(
-                            color: currentTab == 3 ? Colors.green : Colors.grey,
+                            color: currentTab == 4 ? Colors.green : Colors.grey,
                             fontSize: 10,
                           ),
                         ),
@@ -179,7 +186,6 @@ class _GreenTabsState extends State<GreenTabs> {
     );
   }
 }
-
 
 // class FormValidator extends StatefulWidget {
 //   final String username_error;
@@ -260,8 +266,8 @@ class _GreenTabsState extends State<GreenTabs> {
 //   }
 // }
 
-
-
+//want to use this for the comments and things. 
+//Not ready yet
 class Feed {
   final String feedurl;
   final String username;
@@ -273,7 +279,6 @@ class Feed {
   Feed(this.feedurl, this.username, this.caption, this.location, this.likes,
       this.comments);
 }
-
 
 // class BasicGrid extends StatelessWidget {
 //   @override
@@ -500,5 +505,3 @@ class Feed {
 //     );
 //   }
 // }
-
-

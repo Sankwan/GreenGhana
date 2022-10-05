@@ -23,9 +23,9 @@ class VideoDetail extends StatelessWidget {
             height: 8,
           ),
           const ExpandableText(
-            'video caption goes here, video caption goes here, video caption goes here saaaaaaa and video caption goes here saaaaa la',
+            'video caption goes here, video caption goes here, video caption goes here saaaaaaa and video caption goes here saaaaa la, video caption goes here saaaaaaa and video caption goes here saaaaa la',
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.w100, fontSize: 13),
+                color: Colors.white, fontWeight: FontWeight.w400, fontSize: 13),
             expandText: 'more',
             collapseText: 'less',
             expandOnTextTap: true,
@@ -54,7 +54,7 @@ class VideoDetail extends StatelessWidget {
                   velocity: 20,
                   style: const TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.w100,
+                      fontWeight: FontWeight.w400,
                       fontSize: 13),
                 ),
               ),
@@ -65,7 +65,6 @@ class VideoDetail extends StatelessWidget {
     );
   }
 }
-
 
 //this is the field for the side bar which contains the likes, comments and share
 class HomeSidebar extends StatefulWidget {
@@ -105,12 +104,12 @@ class _HomeSidebarState extends State<HomeSidebar>
                 onPressed: null,
                 icon: Icon(
                   Icons.favorite,
-                  size: 30,
+                  size: 35,
                   color: Colors.white,
                 )),
             Text(
               '10K',
-              style: TextStyle(color: Colors.white, fontSize: 12),
+              style: TextStyle(color: Colors.white, fontSize: 13),
             )
           ],
         ),
@@ -123,10 +122,10 @@ class _HomeSidebarState extends State<HomeSidebar>
                 onPressed: null,
                 icon: Icon(
                   Icons.comment,
-                  size: 30,
+                  size: 35,
                   color: Colors.white,
                 )),
-            Text('2K', style: TextStyle(color: Colors.white, fontSize: 12))
+            Text('2K', style: TextStyle(color: Colors.white, fontSize: 13))
           ],
         ),
         const SizedBox(
@@ -138,14 +137,14 @@ class _HomeSidebarState extends State<HomeSidebar>
                 onPressed: null,
                 icon: Icon(
                   Icons.share,
-                  size: 30,
+                  size: 35,
                   color: Colors.white,
                 )),
-            Text('share', style: TextStyle(color: Colors.white, fontSize: 12))
+            Text('share', style: TextStyle(color: Colors.white, fontSize: 13))
           ],
         ),
         const SizedBox(
-          height: 20,
+          height: 100,
         ),
         AnimatedBuilder(
             animation: _animationController,

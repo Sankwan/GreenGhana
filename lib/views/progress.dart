@@ -9,7 +9,7 @@ class Progress extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Progress'),
+        title: Text('2023 Progress', style: TextStyle(color: Colors.white, fontSize: 15),),
         centerTitle: true,
       ),
     );

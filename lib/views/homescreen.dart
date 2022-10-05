@@ -22,7 +22,7 @@ class Homescreen extends StatelessWidget {
       body: PageView.builder(
           onPageChanged: (int page) => {print('Page changed to $page')},
           scrollDirection: Axis.vertical,
-          itemCount: 10,
+          itemCount: 20,
           itemBuilder: ((context, index) {
             return Stack(
               alignment: Alignment.bottomCenter,
@@ -42,7 +42,7 @@ class Homescreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: Container(
-                        height: MediaQuery.of(context).size.height / 2.8,
+                        height: MediaQuery.of(context).size.height / 2.2,
                         child: HomeSidebar(),
                       ),
                     ),
