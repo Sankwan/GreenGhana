@@ -13,6 +13,10 @@ class Requests extends StatefulWidget {
 class _RequestsState extends State<Requests> {
   List items = [];
 
+  var firstKey = 1;
+  var secondKey = 2;
+  var thirdKey = 3;
+
   // Initial Selection for seedlings
   String initVal = 'Opt A';
 
@@ -23,17 +27,29 @@ class _RequestsState extends State<Requests> {
   addCategory(value) {
     items.add(value);
   }
+
   // List 2
+  List regions = [];
+  // Initial Selection for location
+  String initReg = 'Greater Accra';
+  //list of options in dropdown
+  var optionsRegion = ['Greater Accra', 'Western', 'Ashanti'];
+
+  // List 2
+  List locations = [];
   // Initial Selection for location
   String initLoc = 'Forestry Commission HQ';
-  //list of items in dropdown
-  var newoptions = ['Accra Mall', 'WestHills', 'Junction Mall'];
+  //list of options in dropdown
+  var optionsLocation = ['Accra Mall', 'WestHills', 'Junction Mall'];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request for a seedling', style: TextStyle(color: Colors.white, fontSize: 15),),
+        title: const Text(
+          'Request for a seedling',
+          style: TextStyle(color: Colors.white, fontSize: 15),
+        ),
         centerTitle: true,
         // leading: IconButton(onPressed: (() {
         //         Navigator.pop(
@@ -106,9 +122,13 @@ class _RequestsState extends State<Requests> {
 
             DropdownButton(
               value: initVal,
-              icon: Icon(Icons.keyboard_arrow_down),
+              isExpanded: true,
+              icon:const Icon(Icons.keyboard_arrow_down),
               items: options.map((options) {
-                return DropdownMenuItem(value: options, child: Text(options));
+                return DropdownMenuItem(
+                  value: options, 
+                  child: Text(options)
+                );
               }).toList(),
               onChanged: (String? newValue) {
                 setState(() {
@@ -139,18 +159,25 @@ class _RequestsState extends State<Requests> {
               'Region',
               style: TextStyle(fontSize: 17),
             ),
-            DropdownButton(
-              value: initVal,
-              icon: Icon(Icons.keyboard_arrow_down),
-              items: options.map((options) {
-                return DropdownMenuItem(value: options, child: Text(options));
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  initVal = newValue!;
-                });
-              },
-            ),
+            //dropdown to select regions. Gives an error
+            //error1 is here
+
+            // DropdownButton(
+            //   value: initReg,
+            //   isExpanded: true,
+            //   icon:const Icon(Icons.keyboard_arrow_down),
+            //   items: optionsRegion.map((optionsRegion) {
+            //     return DropdownMenuItem(
+            //         value: optionsRegion, 
+            //         child: Text(optionsRegion)
+            //     );
+            //   }).toList(),
+            //   onChanged: (String? value) {
+            //     setState(() {
+            //       initReg = value!;
+            //     });
+            //   },
+            // ),
             const SizedBox(
               height: 40,
             ),
@@ -159,18 +186,23 @@ class _RequestsState extends State<Requests> {
               'Location to receive seedlings',
               style: TextStyle(fontSize: 17),
             ),
-            DropdownButton(
-              value: initVal,
-              icon: Icon(Icons.keyboard_arrow_down),
-              items: options.map((options) {
-                return DropdownMenuItem(value: options, child: Text(options));
-              }).toList(),
-              onChanged: (String? newValue) {
-                setState(() {
-                  initVal = newValue!;
-                });
-              },
-            ),
+            //dropdown to select specific location
+            //error2 is here
+
+            // DropdownButton(
+            //   value: initLoc,
+            //   isExpanded: true,
+            //   icon:const Icon(Icons.keyboard_arrow_down),
+            //   items: optionsLocation.map((optionsLocation) {
+            //     return DropdownMenuItem(
+            //         value: optionsLocation, child: Text(optionsLocation));
+            //   }).toList(),
+            //   onChanged: (String? newValue) {
+            //     setState(() {
+            //       initLoc = newValue!;
+            //     });
+            //   },
+            // ),
             const SizedBox(
               height: 30,
             ),

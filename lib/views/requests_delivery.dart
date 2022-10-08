@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class RequestsDelivery extends StatelessWidget {
   const RequestsDelivery({super.key});
@@ -9,7 +7,7 @@ class RequestsDelivery extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request for a seedling'),
+        title:const Text('Request for a seedling', style: TextStyle( fontSize: 15),),
         centerTitle: true,
       ),
       body: ListView(
@@ -26,11 +24,12 @@ class RequestsDelivery extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30),
-            child: Text('Name', style: TextStyle(fontSize: 20)),
+            child: Text('Name', style: TextStyle(fontSize: 17)),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30, right: 30),
             child: TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: 'your name here...'),
             ),
@@ -40,11 +39,13 @@ class RequestsDelivery extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30),
-            child: Text('Number', style: TextStyle(fontSize: 20)),
+            child: Text('Number', style: TextStyle(fontSize: 17)),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30, right: 30),
             child: TextField(
+              keyboardType: TextInputType.numberWithOptions(),
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: 'your reachable number'),
@@ -55,11 +56,12 @@ class RequestsDelivery extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30),
-            child: Text('Location', style: TextStyle(fontSize: 20)),
+            child: Text('Location', style: TextStyle(fontSize: 17)),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30, right: 30),
             child: TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: 'choose location'),
             ),
@@ -69,11 +71,12 @@ class RequestsDelivery extends StatelessWidget {
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30),
-            child: Text('Joint Location', style: TextStyle(fontSize: 20)),
+            child: Text('Joint Location', style: TextStyle(fontSize: 17)),
           ),
           const Padding(
             padding: EdgeInsets.only(left: 30, right: 30),
             child: TextField(
+              style: TextStyle(fontSize: 14),
               decoration: InputDecoration(
                   border: OutlineInputBorder(), hintText: 'choose location'),
             ),

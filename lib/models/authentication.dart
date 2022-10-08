@@ -10,20 +10,20 @@ import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
 //GreenTabs represent the bottom navigation tabs.
-class GreenTabs extends StatefulWidget {
-  const GreenTabs({super.key});
+class HomeScreenTabs extends StatefulWidget {
+  const HomeScreenTabs({super.key});
 
   @override
-  State<GreenTabs> createState() => _GreenTabsState();
+  State<HomeScreenTabs> createState() => _HomeScreenTabsState();
 }
 
-class _GreenTabsState extends State<GreenTabs> {
+class _HomeScreenTabsState extends State<HomeScreenTabs> {
   int currentTab = 0;
   final List<Widget> views = [
-    Homescreen(),
-    Requests(),
-    Maps(),
-    Progress(),
+    const Homescreen(),
+    const Requests(),
+    const Maps(),
+    const Progress(),
   ];
 
   Future pickImage() async {
@@ -31,7 +31,7 @@ class _GreenTabsState extends State<GreenTabs> {
   }
 
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = Homescreen();
+  Widget currentScreen = const Homescreen();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = Homescreen();
+                        currentScreen = const Homescreen();
                         currentTab = 0;
                       });
                     },
@@ -81,7 +81,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = Requests();
+                        currentScreen = const Requests();
                         currentTab = 1;
                       });
                     },
@@ -131,7 +131,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = Maps();
+                        currentScreen = const Maps();
                         currentTab = 3;
                       });
                     },
@@ -156,7 +156,7 @@ class _GreenTabsState extends State<GreenTabs> {
                     minWidth: 40,
                     onPressed: () {
                       setState(() {
-                        currentScreen = Progress();
+                        currentScreen = const Progress();
                         currentTab = 4;
                       });
                     },
@@ -268,17 +268,7 @@ class _GreenTabsState extends State<GreenTabs> {
 
 //want to use this for the comments and things. 
 //Not ready yet
-class Feed {
-  final String feedurl;
-  final String username;
-  final String caption;
-  final String location;
-  final String likes;
-  final String comments;
 
-  Feed(this.feedurl, this.username, this.caption, this.location, this.likes,
-      this.comments);
-}
 
 // class BasicGrid extends StatelessWidget {
 //   @override

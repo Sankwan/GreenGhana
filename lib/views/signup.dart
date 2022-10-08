@@ -192,7 +192,7 @@ class _SignUpState extends State<SignUp> {
             padding: const EdgeInsets.only(top: 8, left: 90),
             child: Row(
               children: [
-                Text('Already joined us?'),
+               const Text('Already joined us?'),
                 TextButton(
                     onPressed: (() {
                       Navigator.pushReplacement(
@@ -200,7 +200,7 @@ class _SignUpState extends State<SignUp> {
                           MaterialPageRoute(
                               builder: ((context) => const Login())));
                     }),
-                    child: Text(
+                    child:const Text(
                       'Login',
                       style: TextStyle(color: Colors.green),
                     ))

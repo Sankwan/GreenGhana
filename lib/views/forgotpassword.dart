@@ -2,8 +2,6 @@ import 'package:first_application/models/authentication.dart';
 import 'package:first_application/views/homescreen.dart';
 import 'package:first_application/views/login.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});

@@ -5,7 +5,18 @@ import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
 class VideoDetail extends StatelessWidget {
-  const VideoDetail({super.key});
+  final String feedurl;
+  final String username;
+  final String caption;
+  final String location;
+
+  const VideoDetail({
+    Key? key,
+    required this.feedurl,
+    required this.username,
+    required this.caption,
+    required this.location,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +79,15 @@ class VideoDetail extends StatelessWidget {
 
 //this is the field for the side bar which contains the likes, comments and share
 class HomeSidebar extends StatefulWidget {
-  const HomeSidebar({super.key});
+  final String likes;
+  final String comments;
+  final dynamic widget;
+  const HomeSidebar({
+    Key? key,
+    required this.likes,
+    required this.comments,
+    required this.widget,
+  }) : super(key: key);
 
   @override
   State<HomeSidebar> createState() => _HomeSidebarState();

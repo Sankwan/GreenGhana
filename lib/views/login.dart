@@ -1,6 +1,5 @@
 import 'package:first_application/models/authentication.dart';
 import 'package:first_application/views/forgotpassword.dart';
-import 'package:first_application/views/homescreen.dart';
 import 'package:first_application/views/signup.dart';
 import 'package:flutter/material.dart';
 
@@ -16,18 +15,19 @@ class _LoginState extends State<Login> {
 //the secureText is for the password validator 66 to 95, 128 to 135
   final _formKey = GlobalKey<FormState>();
 //the formKey is to help the forms with the validation
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   var _passwordError;
+
   @override
   Widget build(BuildContext context) {
-    var _mediaQuery = MediaQuery.of(context);
+    var mediaQuery = MediaQuery.of(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: ListView(children: [
           Container(
-              height: _mediaQuery.size.height * 0.4,
-              width: _mediaQuery.size.width * 1,
+              height: mediaQuery.size.height * 0.4,
+              width: mediaQuery.size.width * 1,
               decoration: const BoxDecoration(
                 image:
                     DecorationImage(image: AssetImage('assets/images/g2.jpg')),
@@ -136,7 +136,7 @@ class _LoginState extends State<Login> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => const GreenTabs())));
+                        builder: ((context) => const HomeScreenTabs())));
               }),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
@@ -173,7 +173,7 @@ class _LoginState extends State<Login> {
                     shape: BoxShape.circle),
               ),
               SizedBox(
-                width: _mediaQuery.size.width * 0.2,
+                width: mediaQuery.size.width * 0.2,
               ),
               Container(
                 height: 50,

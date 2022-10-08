@@ -2,10 +2,7 @@ import 'package:first_application/models/authentication.dart';
 import 'package:first_application/views/homescreen.dart';
 import 'package:first_application/views/login.dart';
 import 'package:first_application/views/signup.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Otp extends StatefulWidget {
   const Otp({super.key});
@@ -68,7 +65,7 @@ class _OtpState extends State<Otp> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: ((context) => const GreenTabs())));
+                        builder: ((context) => const HomeScreenTabs())));
               }),
               style: TextButton.styleFrom(
                 foregroundColor: Colors.white,
